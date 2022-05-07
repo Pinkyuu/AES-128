@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>755</width>
+    <height>311</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AES -128bit</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPlainTextEdit" name="finalText">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>70</y>
+      <width>343</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="enterText">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>70</y>
+      <width>341</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="flip_btn">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>20</y>
+      <width>151</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>SWAP</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="decode_btn">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>230</y>
+      <width>110</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Дешифрование</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="encode_btn">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>230</y>
+      <width>110</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Шифрование</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="genkey_btn">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>40</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Сгенерировать ключ</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>230</y>
+      <width>149</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Финальный текст:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>40</y>
+      <width>149</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ключ</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>230</y>
+      <width>149</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Начальный текст:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="keyLine">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>40</y>
+      <width>459</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>755</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>genkey_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>generateKey_button()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>182</x>
+     <y>418</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>242</x>
+     <y>232</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>flip_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>flip_button()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>414</x>
+     <y>244</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>242</x>
+     <y>232</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>encode_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>encode_button()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>298</x>
+     <y>418</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>242</x>
+     <y>232</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>decode_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>decode_button()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>414</x>
+     <y>418</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>242</x>
+     <y>232</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>decode_button()</slot>
+  <slot>encode_button()</slot>
+  <slot>generateKey_button()</slot>
+  <slot>flip_button()</slot>
+ </slots>
+</ui>
